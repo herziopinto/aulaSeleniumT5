@@ -13,15 +13,15 @@ describe("Funcionalidade - Adicionar Tarefa", function() {
         await driver.get('https://herziopinto.github.io/lista-de-tarefas/')
         
         // Adicionar a tarefa - encontrar o elemento, digita o texto, apertar enter
-        await driver.findElement(By.id("inputTask")).sendKeys("Aprender Selenium", Key.RETURN)
+        await driver.findElement(By.id("inputTask")).sendKeys("Aprender GitHub", Key.RETURN)
         
         // Assertion / Validação
-        let seleniumText = await driver.findElement(By.xpath("/html/body/div/section/ul/li[1]")).getText()
+        let GitHubText = await driver.findElement(By.xpath("/html/body/div/section/ul/li[1]")).getText()
         .then(function(value){
             return value
         });
         
-        seleniumText.should.equal("Aprender Selenium")
+        GitHubText.should.equal("Aprender GitHub")
         
         // Fechar o navegador
         await driver.quit()
